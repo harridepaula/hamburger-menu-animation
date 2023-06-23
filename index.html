@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animated Hamburger Menu</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <h1>Click Me!</h1>
     <div class="examples">
 
         <!-- Button one -->
@@ -28,8 +32,16 @@
         </button>
 
         <!-- Button two -->
-        <button class="button-two" aria-controls="primary-navigation" aria-expanded="false"></button>
+        <button class="button-two" aria-controls="primary-navigation" aria-expanded="false">
+            <svg stroke="var(--button-color)" fill="none" class="hamburger" viewBox="-10 -10 120 120" width="250">
+                <path class="line" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"
+                d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70">
+                </path>
+              </svg>
+        </button>
 
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

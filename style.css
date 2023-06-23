@@ -5,6 +5,15 @@ body {
     background: #c6c6c6;
 }
 
+h1 {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 00;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #111115;
+}
+
 .examples {
     padding: 3em;
     max-width: 1200px;
@@ -15,7 +24,8 @@ body {
 button {
   background: transparent;
   border: 10px solid var(--button-color, #000);
-  border-radius: 1rem;  
+  border-radius: 1rem;
+  cursor: pointer;
 }
 
 /* button one */
@@ -33,7 +43,7 @@ button {
     transform-origin: center;
 }
 
-.button-one:hover .line {
+.button-one[aria-expanded='true'] .line {
     transition:
       y 300ms ease-in,
       rotate 300ms ease-in 300ms,
@@ -41,20 +51,44 @@ button {
     ;
 }
 
-.button-one:hover :is(.top, .bottom) {
+.button-one[aria-expanded='true'] :is(.top, .bottom) {
     y: 45;
 }
 
-.button-one:hover .top {
+.button-one[aria-expanded='true'] .top {
     rotate: 45deg;
 }
 
-.button-one:hover .bottom {
+.button-one[aria-expanded='true'] .bottom {
     rotate: -45deg;
 }
 
-.button-one:hover .middle {
+.button-one[aria-expanded='true'] .middle {
     opacity: 0;
 }
 
 /* button two */
+
+.button-two {
+    --button-color: #611465;
+    overflow: hidden;
+}
+
+.button-two .line {
+    transition: 1s;
+    stroke-dasharray: 60 31 60 300;
+}
+
+.button-two[aria-expanded='true'] .line {
+    stroke-dasharray: 60 105 60 300;
+    stroke-dashoffset: -90;
+}
+
+.button-two .hamburger {
+    transition: translate 1s, rotate 1s;
+}
+
+.button-two[aria-expanded='true'] .hamburger {
+    translate: 10px -10px;
+    rotate: .125turn;
+}
